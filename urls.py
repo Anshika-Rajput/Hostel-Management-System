@@ -16,16 +16,15 @@ Including another URLconf
 import py_compile
 from django.contrib import admin
 from django.urls import path, include
-
-import student
-
+from management import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('' , include('student.urls')),
-    path('management/' , include('management.urls')),
-
-
+    path('' , views.managementHome),
+    path('student_list/', views.student_list),
+    path('login/', views.login),
+    path('logout/', views.logout),
+    path('contact_forms/', views.contact_forms),
+    path('remove_booking/', views.remove_booking)
 
 ]
